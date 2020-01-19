@@ -48,7 +48,7 @@ export class PessoaEditarComponent implements OnInit {
         nome: data.nome,
         cpf: data.cpf,
         data_nascimento: data.data_nascimento,
-        salario: data.salario,
+        salario: data.salario.toFixed(2),
         email: data.email,
         ativo: data.ativo,
         id_tp_vinculo: data.id_tp_vinculo,
@@ -73,11 +73,15 @@ export class PessoaEditarComponent implements OnInit {
     this.api.updatePessoa(this.id, form)
       .subscribe(res => {
           this.isLoadingResults = false;
-          this.router.navigate(['/']);
+          this.goBack();
         }, (err) => {
           console.log(err);
           this.isLoadingResults = false;
         }
       );
+  }
+
+  goBack(){
+    this.router.navigate(['/']);
   }
 }

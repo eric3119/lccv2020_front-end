@@ -22,7 +22,7 @@ export class PessoaDeletarComponent implements OnInit {
 
   getPessoa(id) {
     this.api.getPessoa(id).subscribe(data => {
-      this.pessoa = data;
+      this.pessoa = data; // TODO .toFixed(2)
       
       this.isLoadingResults = false;
     });

@@ -51,7 +51,7 @@ export class PessoaListaComponent implements OnInit {
         nome: pessoa.nome,
         cpf: pessoa.cpf,
         data_nascimento: pessoa.data_nascimento,
-        salario: pessoa.salario,
+        salario: pessoa.salario.toFixed(2),
         email: pessoa.email,
         ativo: pessoa.ativo,
         id_tp_vinculo: pessoa.id_tp_vinculo,
