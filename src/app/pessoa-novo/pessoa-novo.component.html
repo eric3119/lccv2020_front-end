@@ -1,5 +1,5 @@
 <div>
-    <h3>Adicionar Novo Pessoa</h3>
+    <h3>Adicionar Pessoa</h3>
 </div>
 <form class="example-container" [formGroup]="pessoaForm" (ngSubmit)="addPessoa(pessoaForm.value)">
     <div class="form-field">
@@ -18,10 +18,11 @@
         <input name="email" placeholder="E-mail" formControlName="email">
     </div>
     <div class="form-field">
-        <input name="ativo" placeholder="Ativo" formControlName="ativo">
+        <label for="ativo" >Ativo</label>
+        <input type="checkbox" name="ativo" placeholder="Ativo" formControlName="ativo">
     </div>
     <select formControlName="id_tp_vinculo">
-        <option [ngValue]="null" disabled>Choose your id_tp_vinculo</option>
+        <option [ngValue]="null" disabled>Selecione o vínculo</option>
         <option *ngFor="let vinculo of vinculos" [ngValue]="vinculo.id">
             {{ vinculo.tp_vinculo }}
         </option>

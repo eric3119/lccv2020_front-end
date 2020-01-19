@@ -28,8 +28,8 @@
             <ng-template scope="row" #elseBlock>Não</ng-template>
             <td scope="row">{{ pessoa.tp_vinculo }}</td>
             <td>
-                <a href="/edit/{{ pessoa.id }}">Editar</a>
-                <a href="/delete/{{ pessoa.id }}">Deletar</a>
+                <a href="/pessoa-editar/{{ pessoa.id }}">Editar</a>
+                <a href="/pessoa-deletar/{{ pessoa.id }}">Deletar</a>
             </td>
         </tr>
     </tbody>
