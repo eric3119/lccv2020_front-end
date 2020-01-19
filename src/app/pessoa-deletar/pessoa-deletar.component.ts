@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { Pessoa } from 'src/model/pessoa';
 
 @Component({
   selector: 'app-pessoa-deletar',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PessoaDeletarComponent implements OnInit {
 
-  constructor() { }
+  pessoa: Pessoa;
+
+  isLoadingResults = false;
+  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
+    this.isLoadingResults = true;
+    this.getPessoa(this.route.snapshot.params['id']);    
+ }
+
+  getPessoa(id) {
+    this.api.getPessoa(id).subscribe(data => {
+      this.pessoa = data;
+      
+      this.isLoadingResults = false;
+    });
+  }
+  
+  goBack(){
+    this.router.navigate(['/']);
   }
 
+  deletePessoa() {
+    this.api.deletePessoa(this.pessoa.id)
+      .subscribe(res => {
+          this.goBack();
+        }, (err) => {
+          console.log(err);
+        }
+      );
+  }
 }

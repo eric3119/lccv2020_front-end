@@ -1,1 +1,9 @@
-<p>pessoa-deletar works!</p>
+<div>
+    <h3>Deletar Pessoa</h3>
+</div>
+<div class="container" *ngIf="!isLoadingResults">
+    {{ pessoa.nome }}
+    {{ pessoa.email }}
+    <input type="button" value="Confirmar" (click)="deletePessoa()">
+    <input type="button" value="Cancelar" (click)="goBack()">
+</div>
