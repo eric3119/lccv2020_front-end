@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ApiService } from '../api.service';
-import { Pessoa } from 'src/model/pessoa';
+import { ApiService } from 'src/app/api.service';
 import { TpVinculo } from 'src/model/tpvinculo';
 
 @Component({
-  selector: 'app-pessoas',
-  templateUrl: './pessoas.component.html',
-  styleUrls: ['./pessoas.component.css']
+  selector: 'app-pessoa-lista',
+  templateUrl: './pessoa-lista.component.html',
+  styleUrls: ['./pessoa-lista.component.css']
 })
-export class PessoasComponent implements OnInit {
+export class PessoaListaComponent implements OnInit {
 
   dataSource;
   vinculos: TpVinculo[];
