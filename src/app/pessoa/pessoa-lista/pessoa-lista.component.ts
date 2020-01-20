@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiService } from 'src/app/api.service';
 import { TpVinculo } from 'src/model/tpvinculo';
+import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 
 @Component({
   selector: 'app-pessoa-lista',
@@ -14,7 +15,13 @@ export class PessoaListaComponent implements OnInit {
   vinculos: TpVinculo[];
   isLoadingResults = false;
 
-  constructor(private _api: ApiService) { }
+  constructor(private _api: ApiService, private confirmationDialogService: ConfirmationDialogService) { }
+
+  public openConfirmationDialog(_id, name) {
+    this.confirmationDialogService.confirm( _id, 'Excluir', `Deseja realmente excluir ${name}?`, 'Excluir', 'Cancelar' )
+    .then((confirmed) => console.log('confirmado:', confirmed))
+    .catch(() => console.log('cancelado'));
+  }
 
   ngOnInit() {
 

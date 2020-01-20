@@ -11,13 +11,17 @@ import { PessoaNovoComponent } from './pessoa/pessoa-novo/pessoa-novo.component'
 import { PessoaEditarComponent } from './pessoa/pessoa-editar/pessoa-editar.component';
 import { PessoaDeletarComponent } from './pessoa/pessoa-deletar/pessoa-deletar.component';
 
+import { ConfirmationDialogComponent } from './pessoa/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './pessoa/confirmation-dialog/confirmation-dialog.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     PessoaNovoComponent,
     PessoaEditarComponent,
     PessoaListaComponent,
-    PessoaDeletarComponent
+    PessoaDeletarComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     NgbModule,
@@ -28,7 +32,8 @@ import { PessoaDeletarComponent } from './pessoa/pessoa-deletar/pessoa-deletar.c
     ReactiveFormsModule,
     BrowserModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfirmationDialogService],
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }

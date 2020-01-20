@@ -34,10 +34,9 @@
                 <a href="/pessoa-editar/{{ pessoa.id }}" class="btn btn-dark">
                     <i class="fa fa-pencil"></i>
                 </a>
-                <app-pessoa-deletar></app-pessoa-deletar>
-                <a href="/pessoa-deletar/{{ pessoa.id }}" class="btn btn-danger">
+                <button (click)="openConfirmationDialog(pessoa.id, pessoa.nome)" type="button" class="btn btn-danger">
                     <i class="fa fa-times"></i>
-                </a>
+                </button>
             </td>
         </tr>
     </tbody>
