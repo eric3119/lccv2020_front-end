@@ -1,8 +1,11 @@
 <div>
-    <h3>Pessoas</h3>
-    <a href="/pessoa-novo">Adicionar</a>
+    <h6><strong>Pessoas</strong></h6>
+    <hr />
+    <a href="/pessoa-novo" class="btn btn-dark">
+        <i class="fa fa-plus" style="color: white;" aria-hidden="true"></i>
+    </a>
 </div>
-<table class="table table-striped" *ngIf="!isLoadingResults">
+<table class="table table-striped mt-2" *ngIf="!isLoadingResults">
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -27,11 +30,14 @@
             <td scope="row" *ngIf="pessoa.ativo; else elseBlock">Sim</td>
             <ng-template scope="row" #elseBlock>Não</ng-template>
             <td scope="row">{{ pessoa.tp_vinculo }}</td>
-            <td>
-                <a href="/pessoa-editar/{{ pessoa.id }}">Editar</a>
-                <a href="/pessoa-deletar/{{ pessoa.id }}">Deletar</a>
+            <td class="d-flex justify-content-around">
+                <a href="/pessoa-editar/{{ pessoa.id }}" class="btn btn-dark">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                <button (click)="openConfirmationDialog(pessoa.id, pessoa.nome)" type="button" class="btn btn-danger">
+                    <i class="fa fa-times"></i>
+                </button>
             </td>
         </tr>
     </tbody>
 </table>
-  

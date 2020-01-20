@@ -1,0 +1,38 @@
+{
+  "pessoas": [
+    {
+      "id": 1,
+      "nome": "Ana vieira",
+      "cpf": "5554854321",
+      "data_nascimento": "1970-08-15",
+      "salario": 600.5,
+      "email": "ana@mail.com",
+      "ativo": true,
+      "id_tp_vinculo": 3
+    },
+    {
+      "id": 2,
+      "nome": "Jhon McFly",
+      "cpf": "5544854321",
+      "data_nascimento": "1965-08-02",
+      "salario": 1600.5,
+      "email": "Jhon@mail.com",
+      "ativo": true,
+      "id_tp_vinculo": 3
+    }
+  ],
+  "tp_vinculo": [
+    {
+      "id": 2,
+      "tp_vinculo": "Estagiário"
+    },
+    {
+      "id": 3,
+      "tp_vinculo": "Contratado"
+    },
+    {
+      "id": 4,
+      "tp_vinculo": "Bolsista"
+    }
+  ]
+}

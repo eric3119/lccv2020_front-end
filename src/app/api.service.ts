@@ -52,7 +52,7 @@ export class ApiService {
   }
 
   deletePessoa (id): Observable<Pessoa> {
-    const url = `${apiPessoas}/delete/${id}`;
+    const url = `${apiPessoas}/${id}`;
 
     return this.http.delete<Pessoa>(url, httpOptions).pipe(
       tap(_ => console.log(`remove a pessoa com id=${id}`)),
