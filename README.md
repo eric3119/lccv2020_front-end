@@ -1,4 +1,7 @@
-# Crud
+### Foi utilizado json-server para a api.
+O arquivo db.json possui as instâncias de pessoas.json e tp_vinculo.json<br />
+
+####
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
