@@ -48,7 +48,7 @@ export class PessoaEditarComponent implements OnInit {
         nome: data.nome,
         cpf: data.cpf,
         data_nascimento: data.data_nascimento,
-        salario: data.salario.toFixed(2),
+        salario: data.salario,
         email: data.email,
         ativo: data.ativo,
         id_tp_vinculo: data.id_tp_vinculo,
