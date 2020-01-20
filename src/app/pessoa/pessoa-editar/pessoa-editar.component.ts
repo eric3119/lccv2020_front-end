@@ -36,7 +36,7 @@ export class PessoaEditarComponent implements OnInit {
       'data_nascimento': [null, Validators.required],
       'salario': [null, Validators.required],
       'email': [null, Validators.required],
-      'ativo': [null, Validators.required],
+      'ativo': [null],
       'id_tp_vinculo': [null, Validators.required]
     });
  }
